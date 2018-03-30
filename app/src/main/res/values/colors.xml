@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#323951</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorNavMenuItem">#9a9fb4</color>
+    <color name="colorNavMenuBackground">#39415d</color>
+    <color name="colorNavMenuBackgroundSelected">#343b53</color>
+
+    <color name="turquoise">#49c9dd</color>
+    <color name="white">#FFFFFF</color>
+</resources>

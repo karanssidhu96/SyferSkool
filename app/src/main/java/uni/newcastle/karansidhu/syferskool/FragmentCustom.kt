@@ -1,6 +1,7 @@
 package uni.newcastle.karansidhu.syferskool
 
 import android.app.Fragment
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

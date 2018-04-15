@@ -3,4 +3,5 @@
     <string name="text_home">Home</string>
     <string name="text_tutorials">Tutorials</string>
     <string name="text_custom">Custom</string>
+    <string name="text_custom_intro">Test yourself with your own custom cipher!</string>
 </resources>

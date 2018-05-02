@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">SyferSkool</string>
     <string name="text_home">Home</string>
+
     <string name="text_tutorials">Tutorials</string>
+
     <string name="text_custom">Custom</string>
     <string name="text_custom_intro">Test yourself with your own custom cipher!</string>
+    <string name="text_custom_cipher_type_default">Please choose a type of cipher</string>
+    <string name="text_custom_cipher_type_shift">Shift</string>
+    <string name="text_custom_cipher_type_poly">polyalphabetical</string>
 </resources>

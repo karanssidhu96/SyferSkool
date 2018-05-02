@@ -1,7 +1,7 @@
 package uni.newcastle.karansidhu.syferskool
 
-import android.app.Fragment
-import android.app.FragmentTransaction
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
                     R.id.action_custom ->
                             selectedFragment = FragmentCustom.newInstance()
                 }
-                var ft: FragmentTransaction = fragmentManager.beginTransaction()
+                var ft: FragmentTransaction = supportFragmentManager.beginTransaction()
                 ft.replace(R.id.frame_layout, selectedFragment)
                 ft.commit()
                 return true
             }
         })
-        var ft: FragmentTransaction = fragmentManager.beginTransaction()
+        var ft: FragmentTransaction = supportFragmentManager.beginTransaction()
         ft.replace(R.id.frame_layout, FragmentHome.newInstance())
         ft.commit()
     }

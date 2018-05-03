@@ -7,7 +7,10 @@
     <color name="colorNavMenuItem">#9a9fb4</color>
     <color name="colorNavMenuBackground">#39415d</color>
     <color name="colorNavMenuBackgroundSelected">#343b53</color>
+    <color name="colorSpinnerBackgroundColor">#3d4560</color>
+    <color name="colorLabelText">#767b8e</color>
+    <color name="colorDisabledEdit">#bdbdbd</color>
 
     <color name="turquoise">#49c9dd</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#ffffff</color>
 </resources>

@@ -7,6 +7,13 @@
     <string name="text_custom">Custom</string>
     <string name="text_custom_intro">Test yourself with your own custom cipher!</string>
     <string name="text_custom_cipher_type_default">Please choose a type of cipher</string>
-    <string name="text_custom_cipher_type_shift">Shift</string>
-    <string name="text_custom_cipher_type_poly">polyalphabetical</string>
+    <string-array name="text_array_cipher_types">
+        <item>Shift</item>
+        <item>Polyalphabetical</item>
+    </string-array>
+    <string name="text_spinner_label_cipher_type">Class</string>
+    <string name="text_label_shift_count">Shift Count</string>
+    <string name="text_label_key">Key</string>
+    <string name="text_label_input">Input</string>
+    <string name="text_label_output">Output</string>
 </resources>

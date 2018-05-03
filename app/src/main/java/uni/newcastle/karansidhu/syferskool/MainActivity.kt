@@ -5,7 +5,9 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.view.MenuItem
+import android.support.v4.view.ViewPager
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,30 +16,34 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setViewPager()
+        setNavigationBar(findViewById(R.id.vpPager))
+    }
 
-        bnv = findViewById<BottomNavigationView>(R.id.bottom_navigation) as BottomNavigationView
-        bnv.setOnNavigationItemSelectedListener(object: BottomNavigationView.OnNavigationItemSelectedListener{
-            override fun onNavigationItemSelected(item: MenuItem): Boolean {
-                var selectedFragment: Fragment? = null
-                when(item.itemId)
-                {
-                    R.id.action_home ->
-                            selectedFragment = FragmentHome.newInstance()
+    private fun setViewPager()
+    {
+        val screens = listOf(
+                FragmentHome.newInstance(),
+                FragmentTutorials.newInstance(),
+                FragmentCustom.newInstance()
+        )
+        val viewPager = findViewById<ViewPager>(R.id.vpPager)
+        viewPager.adapter = ViewPagerAdapter(supportFragmentManager, screens)
+        viewPager.currentItem = 0
+        viewPager.addOnPageChangeListener(PageListener(findViewById(R.id.bottom_navigation)))
+    }
 
-                    R.id.action_tutorials ->
-                            selectedFragment = FragmentTutorials.newInstance()
-
-                    R.id.action_custom ->
-                            selectedFragment = FragmentCustom.newInstance()
-                }
-                var ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-                ft.replace(R.id.frame_layout, selectedFragment)
-                ft.commit()
-                return true
+    private fun setNavigationBar(viewPager: ViewPager)
+    {
+        val navigationMenu = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        navigationMenu.setOnNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.action_home -> viewPager.currentItem = 0
+                R.id.action_tutorials -> viewPager.currentItem = 1
+                R.id.action_custom -> viewPager.currentItem = 2
+                else -> throw IllegalStateException("can't handle this fragment ID")
             }
-        })
-        var ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.frame_layout, FragmentHome.newInstance())
-        ft.commit()
+            true
+        }
     }
 }

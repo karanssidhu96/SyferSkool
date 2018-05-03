@@ -1,9 +1,6 @@
 package uni.newcastle.karansidhu.syferskool
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
 import android.support.v4.app.Fragment
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -120,7 +121,8 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/turquoise"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="none"
+        android:digits="abcdefghijklmnopqrstuvwxyz"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/pick_shift"
@@ -173,6 +175,7 @@
         android:backgroundTint="@color/turquoise"
         android:ems="10"
         android:inputType="textPersonName"
+        android:digits="abcdefghijklmnopqrstuvwxyz"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -193,24 +196,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_input" />
 
-    <EditText
-        android:id="@+id/editText_output"
+    <TextView
+        android:id="@+id/textView_output"
         android:layout_width="319dp"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/turquoise"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:textSize="12sp"
+        android:background="@drawable/tvback"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_label_output"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/text_btn_encrypt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_decrypt"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_output"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <Button
+        android:id="@+id/btn_decrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/text_btn_decrypt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_output"
+        app:layout_constraintVertical_bias="0.171" />
 
 </android.support.constraint.ConstraintLayout>

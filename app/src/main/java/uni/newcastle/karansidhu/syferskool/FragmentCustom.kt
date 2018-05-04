@@ -21,6 +21,10 @@ class FragmentCustom: Fragment() {
     lateinit var cipherTypeSpinner : Spinner
     lateinit var noPicker: NumberPicker
     lateinit var keyEditText : EditText
+    lateinit var encryptButton : Button
+    lateinit var decryptButton : Button
+    lateinit var outputTextView : TextView
+    lateinit var inputEditText : EditText
 
     companion object {
         fun newInstance(): Fragment
@@ -35,9 +39,15 @@ class FragmentCustom: Fragment() {
         cipherTypeSpinner = rootView.findViewById(R.id.sp_cipher_type)
         noPicker = rootView.findViewById(R.id.pick_shift)
         keyEditText = rootView.findViewById(R.id.edit_text_key)
+        encryptButton = rootView.findViewById(R.id.btn_encrypt)
+        outputTextView = rootView.findViewById(R.id.textView_output)
+        inputEditText = rootView.findViewById(R.id.edit_text_input)
+        decryptButton = rootView.findViewById(R.id.btn_decrypt)
 
         cipherTypeSpinnerSetUp(cipherTypeSpinner, keyEditText)
         numberPickerSetUp(noPicker)
+        encrypt(encryptButton)
+        decrypt(decryptButton)
 
         return rootView
     }
@@ -69,14 +79,30 @@ class FragmentCustom: Fragment() {
     {
         if (cipherType == "Polyalphabetical")
         {
-            key.isEnabled = false
-            key.background.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(activity, R.color.colorDisabledEdit), PorterDuff.Mode.SRC_ATOP)
-        }
-        else
-        {
             key.isEnabled = true
             key.background.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(activity, R.color.turquoise), PorterDuff.Mode.SRC_ATOP)
         }
+        else
+        {
+            key.isEnabled = false
+            key.background.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(activity, R.color.colorDisabledEdit), PorterDuff.Mode.SRC_ATOP)
+        }
+    }
+
+    private fun encrypt(btn : Button)
+    {
+        val shiftCiphers = ShiftCiphers()
+        btn.setOnClickListener({
+            outputTextView.text = shiftCiphers.shift(inputEditText.text.toString(), noPicker.value)
+        })
+    }
+
+    private fun decrypt(btn : Button)
+    {
+        val shiftCiphers = ShiftCiphers()
+        btn.setOnClickListener({
+            outputTextView.text = shiftCiphers.shift(inputEditText.text.toString(), 0 - noPicker.value)
+        })
     }
 
 }

@@ -16,4 +16,6 @@
     <string name="text_label_key">Key</string>
     <string name="text_label_input">Input</string>
     <string name="text_label_output">Output</string>
+    <string name="text_btn_encrypt">Encrypt</string>
+    <string name="text_btn_decrypt">Decrypt</string>
 </resources>

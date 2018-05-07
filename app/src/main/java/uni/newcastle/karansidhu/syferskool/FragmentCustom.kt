@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.arch.lifecycle.ViewModel
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.support.v4.content.ContextCompat
 import android.widget.*
-import org.koin.android.architecture.ext.viewModel
 
 /**
  * Created by Karan Sidhu on 30/03/2018.
@@ -25,6 +23,7 @@ class FragmentCustom: Fragment() {
     lateinit var decryptButton : Button
     lateinit var outputTextView : TextView
     lateinit var inputEditText : EditText
+    var isShift = true
 
     companion object {
         fun newInstance(): Fragment
@@ -79,11 +78,13 @@ class FragmentCustom: Fragment() {
     {
         if (cipherType == "Polyalphabetical")
         {
+            isShift = false
             key.isEnabled = true
             key.background.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(activity, R.color.turquoise), PorterDuff.Mode.SRC_ATOP)
         }
         else
         {
+            isShift = true
             key.isEnabled = false
             key.background.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(activity, R.color.colorDisabledEdit), PorterDuff.Mode.SRC_ATOP)
         }
@@ -91,17 +92,35 @@ class FragmentCustom: Fragment() {
 
     private fun encrypt(btn : Button)
     {
+        val polyCiphers = PolyCiphers()
         val shiftCiphers = ShiftCiphers()
         btn.setOnClickListener({
-            outputTextView.text = shiftCiphers.shift(inputEditText.text.toString(), noPicker.value)
+            if (!isShift)
+            {
+                outputTextView.text =
+                        polyCiphers.viegenere(inputEditText.text.toString(), keyEditText.text.toString(), true)
+            } else
+            {
+                outputTextView.text =
+                        shiftCiphers.shift(inputEditText.text.toString(), noPicker.value)
+            }
         })
     }
 
     private fun decrypt(btn : Button)
     {
+        val polyCiphers = PolyCiphers()
         val shiftCiphers = ShiftCiphers()
         btn.setOnClickListener({
-            outputTextView.text = shiftCiphers.shift(inputEditText.text.toString(), 0 - noPicker.value)
+            if (!isShift)
+            {
+                outputTextView.text =
+                        polyCiphers.viegenere(inputEditText.text.toString(), keyEditText.text.toString(), false)
+            } else
+            {
+                outputTextView.text =
+                        shiftCiphers.shift(inputEditText.text.toString(), 0 - noPicker.value)
+            }
         })
     }
 

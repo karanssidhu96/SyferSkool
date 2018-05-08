@@ -5,23 +5,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 
 /**
- * Created by Karan Sidhu on 30/03/2018.
+ * Created by Karan Sidhu on 08/05/2018.
  */
-class FragmentTutorials: Fragment() {
-
+class FragmentCaesar : Fragment()
+{
     companion object {
-        fun newInstance(): Fragment
+        fun newInstance(): android.support.v4.app.Fragment
         {
-            var fb: FragmentTutorials = FragmentTutorials()
+            var fb: FragmentCaesar = FragmentCaesar()
             return fb
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val rootView : View = inflater!!.inflate(R.layout.fragment_tutorials, container, false)
-        return rootView
+        return inflater!!.inflate(R.layout.fragment_caesar, container, false)
     }
 }

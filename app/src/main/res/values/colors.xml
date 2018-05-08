@@ -10,6 +10,7 @@
     <color name="colorSpinnerBackgroundColor">#3d4560</color>
     <color name="colorLabelText">#767b8e</color>
     <color name="colorDisabledEdit">#bdbdbd</color>
+    <color name="colorBkgCaesar">#485069</color>
 
     <color name="turquoise">#49c9dd</color>
     <color name="white">#ffffff</color>

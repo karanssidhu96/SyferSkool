@@ -3,16 +3,6 @@
     <string name="text_home">Home</string>
 
     <string name="text_tutorials">Tutorials</string>
-    <string-array name="text_array_tutorials">
-        <item>Caesar</item>
-        <item>ROT-13</item>
-        <item>Vigenère</item>
-    </string-array>
-    <string-array name="text_array_tutorials_sub_items">
-        <item>Where it all began</item>
-        <item>Caesar cipher advanced</item>
-        <item>Multiple interwoven Caesar ciphers</item>
-    </string-array>
 
     <string name="text_custom">Custom</string>
     <string name="text_custom_intro">Test yourself with your own custom cipher!</string>

@@ -21,12 +21,30 @@
 
     <string name="text_caesar">Caesar Cipher</string>
     <string name="text_caesar_explanation">
-        The caesar cipher is credited as the first shift cipher. It is named after Roman emperor
+        The Caesar cipher is credited as the first shift cipher. It is named after Roman emperor
         Julius Caesar, who used the cipher for his private messages. The Caesar cipher works by
         shifting a given character three spaces to the right. For example, the letter B would become
         the letter E.
     </string>
     <string name="text_test">Test</string>
-    <string name="text_caesar_test">Encrypt the plain text, Emperor, using the Caesar Cipher</string>
+    <string name="text_caesar_test">Encrypt the plain text, emperor, using the Caesar Cipher</string>
     <string name="text_cipher_text">Cipher Text</string>
+
+    <string name="text_ROT13">ROT13</string>
+    <string name="text_ROT13_explanation">
+        This is the same as the Caesar cipher but here the encryption and the decryption uses the
+        same architecture. This is due to the shift being half the length of the alphabet, 13.
+    </string>
+    <string name="text_ROT13_test">Encrypt the plain text, thirteen, using the ROT13 Cipher</string>
+
+    <string name="text_vigenère">Vigenère</string>
+    <string name="text_vigenère_explanation">
+        This is a polyalphabetic cipher, it is made up of many interwoven Caesar ciphers based on
+        some key word. For example if we have the plain text and key, bob and ana respectively.
+        We would shift b by 0 as a is the first letter in the alphabet, then o by 13 and b by 0.
+        This gives us bab as the cipher text.
+    </string>
+    <string name="text_vigenère_test">
+        Encrypt the plain text, blaise, using the vigenère Cipher and the key: key
+    </string>
 </resources>

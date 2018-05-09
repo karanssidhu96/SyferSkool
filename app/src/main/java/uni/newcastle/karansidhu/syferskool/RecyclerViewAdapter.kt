@@ -6,6 +6,7 @@ import uni.newcastle.karansidhu.syferskool.RecyclerViewAdapter.ViewHolder
 import android.view.ViewGroup
 import android.widget.*
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 
 /**
@@ -21,6 +22,12 @@ class RecyclerViewAdapter(val context: Context, val main : ArrayList<String>, va
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.main.text = main.get(position)
         holder.sub.text = sub.get(position)
+
+        holder.listLayout.setOnClickListener({ _ ->
+            val intent = Intent(context, TutorialsActivity::class.java)
+            intent.putExtra("title", main.get(position))
+            context.startActivity(intent)
+        })
     }
 
     override fun getItemCount(): Int {
